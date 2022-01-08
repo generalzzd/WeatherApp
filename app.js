@@ -3,7 +3,15 @@ console.log('Starting....')
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
-geocode('boston', (error, data) => {
+address = process.argv[2]
+
+if(!address)
+{
+    console.log('No detect city (will use default city)')
+    address = 'beijing'
+}
+
+geocode(address, (error, data) => {
     
     if(error){
         console.log('Error', error)
