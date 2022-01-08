@@ -1,7 +1,12 @@
+const path = require('path')
 const express = require('express')
 const res = require('express/lib/response')
 
 const app = express()
+const public_dir = path.join(__dirname, '../public')
+console.log('Using static directory: '+ public_dir)
+
+app.use(express.static(public_dir))
 
 app.get('', (req, res) => {
     res.send('<h1>Weather</h1>')
