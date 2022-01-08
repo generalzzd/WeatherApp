@@ -8,21 +8,6 @@ console.log('Using static directory: '+ public_dir)
 
 app.use(express.static(public_dir))
 
-app.get('', (req, res) => {
-    res.send('<h1>Weather</h1>')
-})
-
-app.get('/help', (req, res) => {
-    res.send([{
-        name: 'Zidi',
-        age: 29
-    }])
-})
-
-app.get('/about', (req, res) => {
-    res.send("<h2>This is about page</h2>")
-})
-
 app.get('/weather', (req, res) => {
     res.send({
         forecast:"50 degree",
