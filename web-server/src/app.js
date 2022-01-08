@@ -4,19 +4,25 @@ const res = require('express/lib/response')
 const app = express()
 
 app.get('', (req, res) => {
-    res.send('Hello express!')
+    res.send('<h1>Weather</h1>')
 })
 
 app.get('/help', (req, res) => {
-    res.send('Help page for weather app')
+    res.send([{
+        name: 'Zidi',
+        age: 29
+    }])
 })
 
 app.get('/about', (req, res) => {
-    res.send("This is about page")
+    res.send("<h2>This is about page</h2>")
 })
 
 app.get('/weather', (req, res) => {
-    res.send("This is weather page")
+    res.send({
+        forecast:"50 degree",
+        location: "Beijing"
+    })
 })
 
 app.listen(3000, () => {
